@@ -1,0 +1,32 @@
+*{margin:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden;background:#07060a;font-family:Georgia,serif;color:#e8dcc0;user-select:none}
+canvas{display:block}
+#hud{position:fixed;inset:0;pointer-events:none}
+#wave{position:absolute;top:16px;left:50%;transform:translateX(-50%);font-size:18px;letter-spacing:3px;text-transform:uppercase;text-shadow:0 2px 6px #000}
+#boss{position:absolute;top:50px;left:50%;transform:translateX(-50%);width:min(520px,80vw);text-align:center;font-size:15px}
+#pl{position:absolute;left:20px;bottom:20px;width:min(300px,60vw)}
+.bar{height:14px;margin-top:4px;background:#1b1418;border:2px solid #6b5a3a;border-radius:3px;overflow:hidden}
+.bar i{display:block;height:100%;width:100%;background:linear-gradient(#b02a8a,#6a1a60);transition:width .15s}
+.bar.hp i{background:linear-gradient(#d33,#811)}
+#help{position:absolute;right:20px;bottom:20px;font-size:13px;opacity:.7}
+#msg{position:absolute;top:40%;left:50%;transform:translate(-50%,-50%);font-size:clamp(24px,5vw,46px);text-align:center;text-shadow:0 0 20px #000,0 3px 8px #000;white-space:pre-line}
+#vig{position:absolute;inset:0;box-shadow:inset 0 0 160px 40px rgba(200,0,0,.65);opacity:0;transition:opacity .35s}
+#vig.on{opacity:1;transition:none}
+
+body{touch-action:none}
+button{font:inherit;color:inherit;border:2px solid #6b5a3a;background:rgba(20,14,22,.75);pointer-events:auto;touch-action:none;position:relative;overflow:hidden;cursor:pointer}
+#top{position:absolute;top:10px;right:10px;display:flex;gap:8px;pointer-events:auto}
+#top button{padding:6px 10px;border-radius:8px;font-size:13px}
+#btns{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);display:flex;gap:10px;pointer-events:auto}
+#btns button{width:62px;height:62px;border-radius:50%;font-size:26px;line-height:1}
+#btns button::after{content:'';position:absolute;inset:auto 0 0 0;height:calc(var(--cd,0)*100%);background:rgba(0,0,0,.7)}
+#btns small{position:absolute;top:3px;left:0;right:0;font-size:11px;opacity:.8}
+.tonly,#stick{display:none}
+#stick{position:absolute;left:28px;bottom:28px;width:140px;height:140px;border-radius:50%;border:2px solid #6b5a3a;background:rgba(255,255,255,.06);pointer-events:auto;touch-action:none}
+#knob{position:absolute;left:50%;top:50%;width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;background:rgba(232,220,192,.4);border:2px solid #e8dcc0}
+body.touch #stick{display:block}
+body.touch .tonly{display:block}
+body.touch #help,body.touch #btns small{display:none}
+body.touch #pl{bottom:auto;top:12px;left:12px;width:min(220px,38vw)}
+body.touch #btns{left:auto;right:16px;bottom:16px;transform:none;display:grid;grid-template-columns:repeat(3,62px)}
+body.touch #btns [data-a=atk]{grid-column:span 2;width:100%;border-radius:31px;font-size:18px}

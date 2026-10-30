@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover">
+<title>Dungeon Arena</title>
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/",
+  "@pixiv/three-vrm": "https://cdn.jsdelivr.net/npm/@pixiv/three-vrm@3.3.3/lib/three-vrm.module.js"
+} }
+</script>
+</head>
+<body>
+<div id="hud">
+  <div id="wave"></div>
+  <div id="boss" hidden><span>Malzareth, Penyihir Kegelapan</span><div class="bar"><i id="bossbar"></i></div></div>
+  <div id="pl"><b>Louis</b><div class="bar hp"><i id="hpbar"></i></div></div>
+  <div id="help">WASD gerak · Spasi / Klik serang · Shift berguling · 1 2 3 skill · C kamera · Roll mouse zoom</div>
+  <div id="msg">Memuat karakter...</div>
+  <div id="vig"></div>
+  <div id="top"><button id="tcam">🎥 Kamera: Depan</button><button id="tmode">📱 Mode Android</button></div>
+  <div id="stick"><i id="knob"></i></div>
+  <div id="btns">
+    <button data-a="s1" title="Gelombang Bulan">🌙<small>1</small></button>
+    <button data-a="s2" title="Hentakan Bumi">💥<small>2</small></button>
+    <button data-a="s3" title="Berkat Cahaya">✨<small>3</small></button>
+    <button data-a="roll" class="tonly">💨</button>
+    <button data-a="atk" class="tonly">⚔️ Serang</button>
+  </div>
+</div>
+<script type="module" src="game.js"></script>
+</body>
+</html>
